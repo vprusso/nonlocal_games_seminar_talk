@@ -11,16 +11,10 @@ R{1} = {psi0,psi1};
 % Referee's second basis: {|+><+|, |-><-|}
 R{2} = {psip,psim};
 
-% BB84 game for a single repetition.
-reps = 1; 
-
-% Level of the extended NPA hierarchy 
-lvl = 1;
-
 % Calculate the standard quantum and unentangled values for the BB84 game:
 
 % Standard quantum value = cos^2(\pi/8) \approx 0.8536
-ent = MonogamyGameValueUB(R,reps,lvl)
+ent = MonogamyGameValueUB(R)
 
 % Unentangled value = cos^2(\pi/8) \approx 0.8536
-unent = MonogamyGameUnentangledValue(R,reps)
+unent = MonogamyGameUnentangledValue(R)

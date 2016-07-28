@@ -1,5 +1,5 @@
-# Nonlocal Game Seminar Talk
-## Version 0.0.1 - 1 July 2016
+# Theory Seminar Talk
+## Version 0.0.1 - 11 August 2016
 
 Supplemental MATLAB scripts for the nonlocal games seminar talk on monogamy-of-entanglement games.
 
@@ -10,7 +10,8 @@ Supplemental MATLAB scripts for the nonlocal games seminar talk on monogamy-of-e
 3. [QETLAB](http://www.qetlab.com/Main_Page) (free MATLAB package).
 4. The software on this page. 
 
-In order to run, place the QETLAB, CVX, and NLGST folders in your MATLAB working directory.
+In order to run, place the QETLAB folder, CVX folder, and the content from this repository into a folder in your MATLAB working directory. 
+Once you add the folder to your working directory, you are ready to run the examples. 
 
 ## Description
 

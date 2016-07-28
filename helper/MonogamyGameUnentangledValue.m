@@ -21,7 +21,10 @@
 %
 %             [3] CVX - (http://cvxr.com/cvx/)
 %--------------------------------------------------------------------------
-function [max_cval,rho]  = MonogamyGameUnentangledValue( R, reps )
+function [max_cval,rho]  = MonogamyGameUnentangledValue( R, varargin )
+
+% set optional argument defaults: REPS = 1
+[reps] = opt_args({ 1 },varargin{:});
 
 % Get some basic values and make sure that the input vectors are column
 % vectors.

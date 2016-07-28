@@ -19,10 +19,9 @@ R_win_sum = 0;
 for i = 1:num_outputs
     for j = 1:num_outputs
         R_win_sum = R{1}{i} + R{2}{j};
+        
+        % SDP for unentangled value from slides.
         cvx_begin sdp quiet
-            %cvx_precision best;
-            %#ok<*VUNUS>    % suppress MATLAB warnings for equality checks in CVX
-            %#ok<*EQEFF>    % suppress MATLAB warnings for inequality checks in CVX
             variable rho(2,2) hermitian
         
             maximize trace(R_win_sum'*rho)
