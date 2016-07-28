@@ -24,4 +24,4 @@ NonlocalGameValue(p,V,'classical')
 
 % Call QETLAB function to calculate quantum value (should get 0.8536,
 % which is approximately cos^2(\pi/8). 
-NonlocalGameValue(p,V,'quantum',1)
+NonlocalGameValue(p,V,'quantum')

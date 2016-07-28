@@ -31,7 +31,7 @@ for i = 1:num_outputs
                 rho >= 0;
         cvx_end
         
-        cval = 1/num_inputs * cvx_optval
+        cval = 1/num_inputs * cvx_optval;
         
         if cval > max_cval
             max_cval = cval;
