@@ -1,7 +1,7 @@
-# Theory Seminar Talk
+# Monogamy-of-entanglement games : Theory seminar talk
 ## Version 0.0.1 - 11 August 2016
 
-Supplemental MATLAB scripts for the nonlocal games seminar talk on monogamy-of-entanglement games.
+Supplemental MATLAB scripts for the theory seminar talk on monogamy-of-entanglement games.
 
 ## Dependencies
 
