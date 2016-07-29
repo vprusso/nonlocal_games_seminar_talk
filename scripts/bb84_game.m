@@ -18,3 +18,21 @@ ent = MonogamyGameValueUB(R)
 
 % Unentangled value = cos^2(\pi/8) \approx 0.8536
 unent = MonogamyGameUnentangledValue(R)
+
+%% A closer look at how the unentangled value is being computed.
+max_val = 0;
+num_inputs = 2;
+num_outputs = 2;
+
+for a_1 = 1:num_outputs
+    for a_2 = 1:num_outputs
+        
+        cval = 1/num_inputs * norm( R{1}{a_1} + R{2}{a_2} )
+        
+        if cval > max_val
+            max_val = cval;
+        end
+        
+    end
+end
+max_val

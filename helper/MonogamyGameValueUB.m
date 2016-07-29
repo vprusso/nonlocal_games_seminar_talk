@@ -2,7 +2,7 @@
 % 
 %   Documentation coming soon (maybe).
 
-function mgval = MonogamyGameValue(R,varargin)
+function mgval = MonogamyGameValueUB(R,varargin)
 
     % set optional argument defaults: REPT=1, LVL=1
     [rept,lvl] = opt_args({ 1, 1 },varargin{:});
