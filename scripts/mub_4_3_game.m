@@ -11,13 +11,7 @@ for i = 1:nin
     end
 end
 
-% Number of repetitions of the game. 
-reps = 1; 
-
-% Level of the extended NPA hierarchy.
-lvl = 1;
-
 % Calculate the lower and upper bounds on the quantum value of
 % the mutually unbiased basis game:
-ub = MonogamyGameValueUB(R,reps,lvl)
-lb = MonogamyGameValueLB(R,reps,lvl)
+ub = MonogamyGameValueUB(R)
+lb = MonogamyGameValueLB(R)
