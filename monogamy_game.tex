@@ -143,19 +143,19 @@
 	A \emph{nonlocal game} is a cooperative game played between \emph{Alice} and \emph{Bob} against a \emph{referee}. 
 	\begin{figure}[!htpb] \label{fig:nonlocal-game}
 	\begin{center}
-		\includegraphics[scale=1.0]{figures/nonlocal_game.pdf}
+		\includegraphics[scale=0.8]{figures/two_player_game.pdf}
 	\end{center}
 \end{figure}
 	\begin{enumerate}
-		\item Question and answer sets: $(\SigmaA, \SigmaB)$ and $(\GammaA, \GammaB)$
-		\item Distributions on question pairs: $\pi: \SigmaA \times \SigmaB \rightarrow [0,1]$ 
+		\item Question and answer sets: $(\SigmaA, \SigmaB)$ and $(\GammaA, \GammaB)$,
+		\item Distributions on question pairs: $\pi: \SigmaA \times \SigmaB \rightarrow [0,1]$ ,
 		\item A predicate $V : \GammaA \times \GammaB \times \SigmaA \times \SigmaB \rightarrow \{0,1\}$, where 
 \[
  V(a,b|x,y) =
   \begin{cases} 
-      \hfill 1 \hfill & \text{ if Alice and Bob \textcolor{green}{win}} \\
-      \hfill 0 \hfill & \text{ if Alice and Bob \textcolor{red}{lose}} \\
-  \end{cases},
+      \hfill 1 \hfill & \text{ if Alice and Bob \textcolor{green}{win}}, \\
+      \hfill 0 \hfill & \text{ if Alice and Bob \textcolor{red}{lose}}. \\
+  \end{cases}
 \]			
 	\end{enumerate}
 \end{frame}
@@ -165,7 +165,7 @@
 	Alice and Bob could use different types of \emph{strategies}:
 	\vspace{2mm}
 	\begin{itemize}
-		\item \emph{Classical strategies:} Alice and Bob answer deterministically, determined by functions of $x \in \SigmaA$ and $y \in \SigmaB$. 
+		\item \emph{Classical strategies:} Alice and Bob answer deterministically, determined by functions of $f : \SigmaA \rightarrow \GammaA$ and $g : \SigmaB \rightarrow \GammaB$. 
 		\vspace{5mm}
 		\item \emph{Quantum strategies:} Alice and Bob share a joint quantum system $\rho \in \Density(\A \otimes \B)$ and allow their answers to be outcomes of measurements on this shared system.		
 	\end{itemize}
@@ -184,7 +184,7 @@ For a nonlocal game, $G$, we denote the classical and quantum values as
 % Example: CHSH:
 \begin{frame}
 	\frametitle{Example: The CHSH game}		
-	The CHSH game ($G_{\CHSH}$). Winning condition iff $a \oplus b = x \land y$.
+	The CHSH game ($G_{\CHSH}$). Question and answer sets over $\{0,1\}$. Question pairs $\{ 00, 01, 10, 11 \}$ selected with equal probability. Winning condition iff $a \oplus b = x \land y$.
 	\begin{center}
 			$\omega(G_{\CHSH}) < \omega^*(G_{\CHSH})$
 	\end{center}
@@ -192,11 +192,11 @@ For a nonlocal game, $G$, we denote the classical and quantum values as
 	\begin{itemize}
 		\item $\omega(G_{\CHSH}) = \frac{3}{4} = 0.75$:
 		\begin{center}
-			\includegraphics[scale=0.8]{figures/nonlocal_classical.pdf}
+			\includegraphics[scale=0.4]{figures/two_player_game.pdf}
 		\end{center}
 		\item $\omega^*(G_{\CHSH}) = \cos^2(\frac{\pi}{8}) \approx 0.8536$:
 		\begin{center}
-			\includegraphics[scale=0.8]{figures/nonlocal_quantum.pdf}
+			\includegraphics[scale=0.4]{figures/nonlocal_game_2.pdf}
 		\end{center}		
 	\end{itemize}
 \end{frame}
@@ -218,10 +218,10 @@ For a nonlocal game, $G$, we denote the classical and quantum values as
 % Extended nonlocal games:
 \begin{frame}
 	\frametitle{Extended nonlocal games}
-	An \emph{extended nonlocal game} is a nonlocal game where the \emph{referee also holds a quantum system} the he measures provided by Alice and Bob. 
+	An \emph{extended nonlocal game} is a nonlocal game where the \emph{referee also holds a quantum system} that he measures provided by Alice and Bob. 
 	\begin{figure}[!htpb] \label{fig:extended-nonlocal-game}
 	\begin{center}
-		\includegraphics[scale=1.0]{figures/extended_nonlocal_game.pdf}
+		\includegraphics[scale=0.7]{figures/enlg_2.pdf}
 	\end{center}
 \end{figure}
 	\begin{enumerate}
@@ -260,14 +260,14 @@ For a nonlocal game, $G$, we denote the classical and quantum values as
 	Monogamy-of-entanglement games\footnote{[Tomamichel, Fehr, Kaniewski, Wehner, (2013)]}, are a special type of extended nonlocal game. 
 \begin{figure}[!htpb] \label{fig:monogamy-of-entanglement game}
 	\begin{center}
-		\includegraphics[scale=1.0]{figures/monogamy_game.pdf}
+		\includegraphics[scale=0.7]{figures/moe_2.pdf}
 	\end{center}
 \end{figure}
 	\begin{enumerate}
 		\item Same question and answer sets: $\Sigma = \SigmaA = \SigmaB$ and $\Gamma = \GammaA = \GammaB$. 
 		\item Alice and Bob get the same question: $\pi(x,y) = 0$ for $x \not= y$. 
 		\item Referee's measurement operator: $R : \Sigma \times \Gamma \rightarrow \Pos(\R)$. 
-		\item Winning condition: Iff Alice's output, Bob's output, and the referee's measurement output are the \emph{same}. 
+		\item Winning condition: Iff Alice's output, Bob's output, and the referee's output are all the \emph{equal}. 
 	\end{enumerate}
 \end{frame}
 
@@ -279,7 +279,7 @@ For a nonlocal game, $G$, we denote the classical and quantum values as
 	\frametitle{Standard quantum strategies for monogamy-of-entanglement games}
 	A \emph{standard quantum strategy} consists of a tripartite state $\rho \in \Density(\R \otimes \A \otimes \B)$ and sets of local measurements for Alice and Bob. 
 	\begin{itemize}
-		\item The winning probability for a monogamy-of-entanglement game, $G$ using a standard quantum strategy is:
+		\item The winning probability for a monogamy-of-entanglement game using a standard quantum strategy is:
 			\begin{align*}
 				\sum_{x \in \Sigma} \pi(x) \sum_{a \in \Gamma} \biggip{R(a|x) \otimes A_a^x \otimes B_a^x}{\rho}.
 			\end{align*}
@@ -293,7 +293,7 @@ The standard quantum value of a monogamy-of-entanglement game, $G$, denoted as $
 
 \begin{frame}
 	\frametitle{Unentangled strategies for monogamy-of-entanglement games}
-	In an \emph{unentangled strategy}, the state $\rho$ prepared by Alice and Bob is fully separable, 
+	In an \emph{unentangled strategy}, the state $\rho$ prepared by Alice and Bob is fully separable, that is
 	\begin{align*}
 		\{ \rho_j^{\reg{R}} : j \in \Delta \} \subseteq \Density(\R), \quad \{ \rho_j^{\reg{A}} : j \in \Delta \} \subseteq \Density(\A), \quad \{ \rho_j^{\reg{B}} : j \in \Delta \} \subseteq \Density(\B),
 	\end{align*}
@@ -313,8 +313,8 @@ where $\rho$ is separable.
 \end{frame}
 
 \begin{frame}
-	\frametitle{Unentangled value}
-	For an unentangled strategy, we have that the referee, Alice, and Bob share
+	\frametitle{Unentangled value of monogamy-of-entanglement games}
+	For an unentangled strategy, we have that Alice, Bob, and the referee share
 	\begin{align*}
 		\rho = \sum_{j \in \Delta} p(j) \rho_j^{\reg{R}} \otimes \rho_j^{\reg{A}} \otimes \rho_j^{\reg{B}}.
 	\end{align*}
@@ -333,10 +333,10 @@ Alice and Bob only win when their outputs agree, and we assume that the measurem
 	\begin{itemize}
 	\item For any monogamy-of-entanglement game, $G$, the unentangled value is:
 	\begin{align*}
-		\omega(G) = \max_{f: \Sigma \rightarrow \Gamma} \biggnorm{\sum_{x \in \Sigma} \pi(x) R(f(x)|x) }.
+		\omega(G) = \max_{f: \Sigma \rightarrow \Gamma} \biggnorm{\sum_{x \in \Sigma} \pi(x) R(f(x)|x) },
 	\end{align*}	
+	where the maximum is over all functions $f : \Sigma \rightarrow \Gamma$.
 	\end{itemize}  
-	for choice of measurements $\{A_a^x\}$ for Alice and $\{B_b^y\}$ for Bob. 
 \end{frame}
 
 \begin{frame}
@@ -567,7 +567,7 @@ This ability to compute upper bounds for extended nonlocal games is obtained fro
 		\item \emph{Parallel repetition:} Run a monogamy-of-entanglement game, $G$, for $n$ times in parallel, denoted as $G^n$. 
 		\item \emph{Strong parallel repetition:} $\omega(G^n) = \omega(G)^n$
 	\end{itemize}
-	%\includegraphics[scale=0.5]{figures/ParallelRep}
+	\includegraphics[scale=0.6]{figures/extended_nonlocal_game_parallel_repetition_2.pdf}
 	\begin{center}
 		\emph{Question:} Do all monogamy-of-entanglement games obey strong parallel repetition? 
 	\end{center}
@@ -665,16 +665,16 @@ where $c(G)$ is the ``maximal overlap of measurements'' of the referee
 		\omega(G) = \frac{1}{2} + \frac{1}{2} \sqrt{c(G)}. 
 	\end{align*}
 	\pause
-	Since this is an unentangled strategy, we can assume that Alice and Bob just play every instance optimally (since there is no correlation). It follows then that
-	\begin{align}
+	Since this is an unentangled strategy, we can assume that Alice and Bob just play every instance optimally (since there is no quantum correlation). It follows then that
+	\begin{align*}
 		\omega(G^n) = \left( \frac{1}{2} + \frac{1}{2} \sqrt{c(G)} \right)^n. 
-	\end{align}
+	\end{align*}
 	\pause
-	Recall that the theorem from~\footnote{[Tomamichel, Fehr, Kaniewski, Wehner, (2013)]} gives us
+	Recall that the theorem from [Tomamichel, Fehr, Kaniewski, Wehner, (2013)] gives us
 	\begin{align*}
 		\omega^*(G^n) \leq \left( \frac{1}{2} + \frac{1}{2} \sqrt{c(G)} \right)^n,
 	\end{align*}
-	which gives us that $\omega^*(G) \leq \omega(G)$. 
+	which gives us that $\omega^*(G^n) \leq \omega(G^n)$. 
 	\pause
 	Finally,
 	\small{
@@ -723,5 +723,6 @@ Question: What about $\abs{\Sigma} = 3$?
 
 \footnotetext{So long as the measurements used by the referee are projective and the probability distribution, $\pi$, from which the questions are asked is uniform.}
 \end{frame}
+
     
 \end{document}

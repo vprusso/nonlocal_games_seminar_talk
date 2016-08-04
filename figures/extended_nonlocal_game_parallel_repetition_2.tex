@@ -293,26 +293,103 @@
 
 \begin{document}
 
-			\begin{center}
-					\begin{tikzpicture}[text depth=1pt, bend angle=45,shorten >=1pt,node distance=2cm,scale=0.8, transform shape]
-				\tikzstyle {Ref} = [shape=rectangle, rounded corners, draw=black!50, thick, fill=black!20, minimum height=6mm, minimum width=6mm, inner sep=1ex]
-  			\tikzstyle {AB}   = [shape=rectangle, rounded corners, dotted, draw=black!50, thick,fill=gray!15, minimum height=6mm, minimum width=6mm] 
+\tikzstyle{block} = [draw,fill=blue!20,minimum size=2em]
+% diameter of semicircle used to indicate that two lines are not connected
+\def\radius{1.8mm} 
+\tikzstyle{branch}=[fill,shape=circle,minimum size=0pt,inner sep=0pt]
+    % Define a style for shifting a coordinate upwards
+    % Note the curly brackets around the coordinate.
+    \tikzstyle{s}=[shift={(0mm,\radius)}]
+    
+\begin{center}
+\begin{tikzpicture}[>=latex']
 
-				% Alice / Bob prepare state
-				\node[Ref] (Referee) at (2.25,0) {Referee};
-				\node[AB] (Alice) at (0,1.5) {\small Alice};
-				\node[AB] (Bob) at (4.5,1.5) {\small Bob};
+			\tikzstyle{Ref} = [shape=rectangle,rounded corners,draw=black!50,thick,fill=black!20,minimum height=10mm,minimum width=9mm,inner sep=1ex]
+			\tikzstyle{Sig}=[shape=rectangle,rounded corners,dotted,draw=black!50,thick,fill=gray!15,minimum height=10mm,minimum width=10mm]
+			\tikzstyle{AB}=[shape=rectangle,rounded corners,dotted,draw=black!50,thick,fill=gray!15,minimum height=15mm,minimum width=10mm]
 
-			 \path[->,thick] (Referee) edge [bend left=45] node [below] {\small{$x$}} (Alice)
-                     edge [bend right=45] node [below] {\small{$y$}} (Bob);
-                     
-			 \path[<-,thick] (Referee) edge [bend right=45] node [above] {\small{$a$}} (Alice)
-                     edge [bend left=45] node [above] {\small{$b$}} (Bob);
+			\node[Ref] (Ref-0-1) at (0,2.5) {\small $R_{0,1}$};			
+			\node[Ref] (Ref-0-r) at (0,-2.5) {\small $R_{0,r}$};					
+			
+			\node[Ref] (Ref-1-0) at (6,2.5) {\small $R_{1,1}$};
+			\node[Ref] (Ref-1-r) at (6,-2.5) {\small $R_{1,r}$};
+						
+			\node[AB] (A-1) at (3,2.2) {\small $A$};
+			\node[AB] (B-1) at (3,-2.2) {\small $B$};
+			
+		  \node[Sig] (sig) at (-2, 0) {\small $\sigma$};
+		  
+		  \draw[-,thick] (-2,0.5) to (-2,4.5) {};
+		  \draw[-,thick] (-2,4.5) to node[above] {$\reg{R}_1$} (6,4.5);
+		  \draw[-,thick] (6,4.5) to (6,3) {};
+		  
+		  \draw[-,thick] (-2,-0.5) to (-2,-4.5) {};
+		  \draw[-,thick] (-2,-4.5) to node[above] {$\reg{R}_r$} (6,-4.5);
+		  \draw[-,thick] (6,-4.5) to (6,-3) {};
 
-				\path [-, decoration={zigzag,segment length=4,amplitude=.9,
-  post=lineto,post length=2pt},font=\scriptsize,
-  line join=round,thick,blue,bend left=45] (Alice) edge[decorate] node [above] {\small{$\rho$}} (Bob);
-					\end{tikzpicture}
-				\end{center}
+			\draw[-,thick] (-1,0.2) to (-1,4) {};
+			\draw[-,thick] (-1,0.2) to (-1.5,0.2) {};
+			\draw[-,thick] (-1,4) to node[above] {$\reg{X}$} (3,4);
+			\draw[-,thick] (3,4) to (3,3);
+			
+			\draw[-,thick] (-1,-0.2) to (-1,-4) {};
+			\draw[-,thick] (-1,-0.2) to (-1.5,-0.2) {};
+			\draw[-,thick] (-1,-4) to node[above] {$\reg{Y}$} (3,-4);
+			\draw[-,thick] (3,-4) to (3,-3);
+
+			\node[] (elips-r) at (0,0) {\large{$\vdots$}};			  
+			\node[] (elips-a) at (4.5,2.5) {\large{$\vdots$}};			  
+			\node[] (elips-b) at (4.5,-2) {\large{$\vdots$}};			  
+			\node[] (elips-m) at (6,0) {\large{$\vdots$}};			  
+		  
+		  \draw[double,thick] (0.5,2.8) to node[above] {$x_1$} (2.5,2.8);
+		  \draw[double,thick] (3.5,2.8) to node[above] {$a_1$} (5.5,2.8);
+		  \draw[double,thick] (0.5,-2.8) to node[above] {$y_r$} (2.5,-2.8);
+		  \draw[double,thick] (3.5,-2.8) to node[above] {$b_r$} (5.5,-2.8);
+		  \draw[double,thick] (0.5,-2.2) to node[above] {$x_r$} (1.8,-2.2);
+		  \draw[double,thick] (1.8,-2.2) to (1.8,1.35);
+		  \draw[double,thick] (3.5,-1.6) to node[above] {$b_1$} (4.8,-1.6);
+		  \draw[double,thick] (4.8,-1.6) to (4.8,1.35);
+		  \draw[double,thick] (5.2,1.3) to (5.4,1.3);
+		  \draw[double,thick] (5.4,1.3) to (5.4,2.2);
+		  \draw[double,thick] (5.4,2.2) to (5.5,2.2);
+		  
+		  \draw[double,thick] (2.2,1.3) to (2.4,1.3);
+		  \draw[double,thick] (2.4,1.3) to (2.4,1.7);
+		  \draw[double,thick] (2.4,1.7) to (2.5,1.7);
+		  
+
+		  
+		  \draw[double,thick] (0.5,2.2) to node[above] {$y_1$} (2,2.2);
+		  \draw[double,thick] (2,2.2) to (2,-2.2);
+		  \draw[double,thick] (2,-2.2) to (2.5,-2.2);
+		  
+		  \draw[double,thick] (3.5,1.6) to node[above] {$a_r$} (5,1.6);
+		  \draw[double,thick] (5,1.6) to (5,-2.2);
+		  \draw[double,thick] (5,-2.2) to (5.5,-2.2);
+      
+      \node at (2.18,1.8) (input2) {};
+      \node at (3.5,2) (block2) {};
+      
+      \node at (5.18,0.6) (input3) {};
+      \node at (3.5,2) (block3) {};
+      
+    % Calculate branch point coordinate
+    \path (input2) -- coordinate (branch) (block2);
+    \path (input3) -- coordinate (branch) (block3);
+    
+
+    \draw[double,thick] (branch) node[branch] {}{ % draw branch junction
+             (branch -| input2) arc(0:180:\radius)
+            
+        };
+
+    \draw[double,thick] (branch) node[branch] {}{ % draw branch junction
+             (branch -| input3) arc(0:180:\radius)
+            
+        };        
+        
+\end{tikzpicture}
+\end{center}
 
 \end{document}

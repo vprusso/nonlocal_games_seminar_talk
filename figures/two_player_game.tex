@@ -298,79 +298,24 @@
 
 
 \begin{document}
-			\begin{tikzpicture}[text depth=1pt, bend angle=45,shorten >=1pt,node distance=2cm,scale=0.8, transform shape]
-				\tikzstyle {Ref} = [shape=rectangle, rounded corners, draw=black!50, thick, fill=black!20, minimum height=6mm, minimum width=6mm, inner sep=1ex]
-  			\tikzstyle {AB}   = [shape=rectangle, rounded corners, dotted, draw=black!50, thick,fill=gray!15, minimum height=6mm, minimum width=6mm] 
+			\begin{tikzpicture}[text depth=1pt,bend angle=45]
+		
+			\tikzstyle{Ref} = [shape=rectangle,rounded corners,draw=black!50,thick,fill=black!20,minimum height=15mm,minimum width=9mm,inner sep=1ex]
+			\tikzstyle{AB}=[shape=rectangle,rounded corners,dotted,draw=black!50,thick,fill=gray!15,minimum height=10mm,minimum width=10mm]
 
-				% Alice / Bob prepare state
-				\node[Ref] (Referee-1) at (2.25,0) {Referee$_1$};
-				\node[AB] (Alice-1) at (0,1.5) {\small Alice$_1$};
-				\node[AB] (Bob-1) at (4.5,1.5) {\small Bob$_1$};
-				
-				%\draw[thick,->] (Referee-1) -- node [right] {\small{$r_1$}} (2.25,-1);
-
-			 \path[->,thick] (Referee-1) edge [bend left=45] node [below] {\small{$x_1$}} (Alice-1)
-                     edge [bend right=45] node [below] {\small{$y_1$}} (Bob-1);
-                            
-                    
-			 \path[<-,thick] (Referee-1) edge [bend right=45] node [above] {\small{$a_1$}} (Alice-1)
-                     edge [bend left=45] node [above] {\small{$b_1$}} (Bob-1);
-
-				\path [-, decoration={zigzag,segment length=4,amplitude=.9,
-  post=lineto,post length=2pt},font=\scriptsize,
-  line join=round,thick,blue,bend left=45] (Alice-1) edge[decorate] node [above] {\small{$\rho$}} (Bob-1);
-
-\path [-, decoration={zigzag,segment length=4,amplitude=.9,
-  post=lineto,post length=2pt},font=\scriptsize,
-  line join=round,thick,blue]  
-				(Alice-1) edge[decorate] (Referee-1) 
-				(Referee-1) edge[decorate] (Bob-1); 
-
-				\node[Ref] (Referee-2) at (8.25,0) {Referee$_2$};
-				\node[AB] (Alice-2) at (6,1.5) {\small Alice$_2$};
-				\node[AB] (Bob-2) at (10.5,1.5) {\small Bob$_2$};
-
-			 \path[->,thick] (Referee-2) edge [bend left=45] node [below] {\small{$x_2$}} (Alice-2)
-                     edge [bend right=45] node [below] {\small{$y_2$}} (Bob-2);
-                            
-                    
-			 \path[<-,thick] (Referee-2) edge [bend right=45] node [above] {\small{$a_2$}} (Alice-2)
-                     edge [bend left=45] node [above] {\small{$b_2$}} (Bob-2);
-
-				\path [-, decoration={zigzag,segment length=4,amplitude=.9,
-  post=lineto,post length=2pt},font=\scriptsize,
-  line join=round,thick,blue,bend left=45] (Alice-2) edge[decorate] node [above] {\small{$\rho$}} (Bob-2);
-
-\path [-, decoration={zigzag,segment length=4,amplitude=.9,
-  post=lineto,post length=2pt},font=\scriptsize,
-  line join=round,thick,blue]  
-				(Alice-2) edge[decorate] (Referee-2) 
-				(Referee-2) edge[decorate] (Bob-2); 		
-
-% cdots here 
-
-				\node[Ref] (Referee-n) at (16.25,0) {Referee$_r$};
-				\node[AB] (Alice-n) at (14,1.5) {\small Alice$_r$};
-				\node[AB] (Bob-n) at (18.5,1.5) {\small Bob$_r$};
-
-			 \path[->,thick] (Referee-n) edge [bend left=45] node [below] {\small{$x_r$}} (Alice-n)
-                     edge [bend right=45] node [below] {\small{$y_r$}} (Bob-n);
-                            
-                    
-			 \path[<-,thick] (Referee-n) edge [bend right=45] node [above] {\small{$a_r$}} (Alice-n)
-                     edge [bend left=45] node [above] {\small{$b_r$}} (Bob-n);
-
-				\path [-, decoration={zigzag,segment length=4,amplitude=.9,
-  post=lineto,post length=2pt},font=\scriptsize,
-  line join=round,thick,blue,bend left=45] (Alice-n) edge[decorate] node [above] {\small{$\rho$}} (Bob-n);
-
-\path [-, decoration={zigzag,segment length=4,amplitude=.9,
-  post=lineto,post length=2pt},font=\scriptsize,
-  line join=round,thick,blue]  
-				(Alice-n) edge[decorate] (Referee-n) 
-				(Referee-n) edge[decorate] (Bob-n); 									
-
-		\draw[loosely dotted,thick] (12,1) -- (13,1);
-				
+			\node[Ref] (Ref-0) at (0,0) {\small $R_0$};			
+			\node[Ref] (Ref-1) at (6,0) {\small $R_1$};
+			
+			\node[AB] (A-1) at (3,2) {\small $A$};
+			\node[AB] (B-1) at (3,-2) {\small $B$};
+											
+			\draw[double,thick] (0.5,0.5) [out=90,in=180] to [out=0,in=180] node[above] {$x$} (2.5,2);
+			\draw[double,thick] (0.5,-0.5) [out=90,in=180] to [out=0,in=180] node[above] {$y$} (2.5,-2);			
+			
+			
+			
+			\draw[double,thick] (3.5,2) [out=90,in=180] to [out=0,in=180] node[above] {$a$} (5.5,0.5);
+			\draw[double,thick] (3.5,-2) [out=90,in=180] to [out=0,in=180] node[above] {$b$} (5.5,-0.5);	
 			\end{tikzpicture}
 \end{document}
+

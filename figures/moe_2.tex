@@ -256,6 +256,12 @@
 \newenvironment{namedtheorem}[1]
 	       {\begin{trivlist}\item {\bf #1.}\em}{\end{trivlist}}
 
+% Title and authors
+\hypersetup{
+  pdftitle = {Upper bounding the quantum value of extended-nonlocal games},
+  pdfauthor = {?}
+}
+
 \usepackage[affil-it]{authblk}
 
 \def\X{\mathcal{X}}
@@ -292,25 +298,39 @@
 
 
 \begin{document}
+			\begin{tikzpicture}[text depth=1pt,bend angle=45]
+		
+			\tikzstyle{Ref} = [shape=rectangle,rounded corners,draw=black!50,thick,fill=black!20,minimum height=15mm,minimum width=9mm,inner sep=1ex]
+			\tikzstyle{AB}=[shape=rectangle,rounded corners,dotted,draw=black!50,thick,fill=gray!15,minimum height=10mm,minimum width=10mm]
 
-\begin{center}
-						\begin{tikzpicture}[text depth=1pt, bend angle=45,shorten >=1pt,node distance=2cm, scale=0.8, transform shape]
-				\tikzstyle {Ref} = [shape=rectangle, rounded corners, draw=black!50, thick, fill=black!20, minimum height=6mm, minimum width=6mm, inner sep=1ex]
-  			\tikzstyle {AB}   = [shape=rectangle, rounded corners, dotted, draw=black!50, thick,fill=gray!15, minimum height=6mm, minimum width=6mm] 
+			\node[Ref] (Ref-0) at (0,0) {\small $R_0$};			
+			\node[Ref] (Ref-1) at (6,0) {\small $R_1$};
+			
+			\node[AB] (A-1) at (3,2) {\small $A$};
+			\node[AB] (B-1) at (3,-2) {\small $B$};
+			
+		  \node[AB] (sig) at (-2, 0) {\small $\rho$};
+			
+			\draw[-,thick] (-1,0.2) to (-1,2.4) {};
+			\draw[-,thick] (-1,0.2) to (-1.5,0.2) {};
+			\draw[-,thick] (-1,2.4) to node[above] {$\reg{A}$} (2.5,2.4);
+			
+			\draw[-,thick] (-1,-0.2) to (-1,-2.4) {};
+			\draw[-,thick] (-1,-0.2) to (-1.5,-0.2) {};
+			\draw[-,thick] (-1,-2.4) to node[above] {$\reg{B}$} (2.5,-2.4);
+											
 
-				% Alice / Bob prepare state
-				\node[Ref] (Referee) at (2.25,0) {Referee};
-				\node[AB] (Alice) at (0,1.5) {\small Alice};
-				\node[AB] (Bob) at (4.5,1.5) {\small Bob};
-
-			 \path[->,thick] (Referee) edge [bend left=45] node [below] {\small{$x$}} (Alice)
-                     edge [bend right=45] node [below] {\small{$y$}} (Bob);
-                     
-			 \path[<-,thick] (Referee) edge [bend right=45] node [above] {\small{$a$}} (Alice)
-                     edge [bend left=45] node [above] {\small{$b$}} (Bob);
-				
-					\end{tikzpicture}
-				\end{center}
-
-
+			\draw[-,thick] (-2,0.5) to (-2,3) {}; 			
+			\draw[-,thick] (-2,3) to node[above] {$\reg{R}$} (6,3) {};
+			\draw[-,thick] (6,3) to (6,0.7){};
+			
+			\draw[double,thick] (0.5,0.5) [out=90,in=180] to [out=0,in=180] node[above] {$x$} (2.5,2);
+			\draw[double,thick] (0.5,-0.5) [out=90,in=180] to [out=0,in=180] node[above] {$x$} (2.5,-2);			
+			
+			\draw[-,thick] (Ref-0) to node[above]{$\reg{R}$} (Ref-1);
+			
+			\draw[double,thick] (3.5,2) [out=90,in=180] to [out=0,in=180] node[above] {$a$} (5.5,0.5);
+			\draw[double,thick] (3.5,-2) [out=90,in=180] to [out=0,in=180] node[above] {$b$} (5.5,-0.5);	
+			\end{tikzpicture}
 \end{document}
+
