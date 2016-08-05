@@ -205,7 +205,7 @@ For a nonlocal game, $G$, we denote the classical and quantum values as
   \vfill
   \centering
   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}Demo Time: CHSH Game in QETLAB \\ \textsc{chsh\_game.m}
+    \usebeamerfont{title}Demo Time: CHSH game in QETLAB \\ \textsc{chsh\_game.m}
   \end{beamercolorbox}
   \vfill
 \end{frame}
@@ -367,7 +367,7 @@ Alice and Bob only win when their outputs agree, and we assume that the measurem
   \vfill
   \centering
   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}Demo Time: BB84 Game \\ \textsc{bb84\_game.m}
+    \usebeamerfont{title}Demo Time: BB84 game \\ \textsc{bb84\_game.m}
   \end{beamercolorbox}
   \vfill
 \end{frame}
@@ -417,7 +417,7 @@ for all monogamy-of-entanglement games $G$?
   \vfill
   \centering
   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}Demo Time: Random Monogamy Games \\ \textsc{random\_moe\_games.m}
+    \usebeamerfont{title}Demo Time: Random monogamy-of-entanglement games \\ \textsc{random\_moe\_games.m}
   \end{beamercolorbox}
   \vfill
 \end{frame}
@@ -472,6 +472,15 @@ for all monogamy-of-entanglement games $G$?
 	\end{enumerate}
 \end{frame}
 
+\begin{frame} [noframenumbering]
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}Demo Time: Mutually unbiased basis game \\ \textsc{mub\_4\_3\_game.m}
+  \end{beamercolorbox}
+  \vfill
+\end{frame}
+
 \begin{frame}
 	\frametitle{Monogamy-of-entanglement games where $\omega(G) \not= \omega^*(G)$}
 	\begin{itemize}
@@ -479,21 +488,12 @@ for all monogamy-of-entanglement games $G$?
 	\begin{align*}
 		\omega(G) = \frac{3 + \sqrt{5}}{8} \approx 0.6545. 
 	\end{align*}
-	\item Alternatively, a computer search over standard quantum strategies and a heuristic approximation for the upper bound of $\omega^*(G)$ reveals that 
+	\item Alternatively, a computer search over standard quantum strategies and a heuristic approximation for the upper bound of $\omega^*(G)$ reveals that: 
 	\begin{align*}
-		2/3 \geq \omega^*(G) \geq 0.6609
+		2/3 \geq \omega^*(G) \geq 0.6609.
 	\end{align*}
 	\end{itemize}
 This ability to compute upper bounds for extended nonlocal games is obtained from an adaptation of a technique known as the \emph{NPA hierarchy.}
-\end{frame}
-
-\begin{frame} [noframenumbering]
-  \vfill
-  \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}Demo Time: MUB game \\ \textsc{mub\_4\_3\_game.m}
-  \end{beamercolorbox}
-  \vfill
 \end{frame}
 
 \begin{frame}[noframenumbering]
@@ -556,7 +556,7 @@ This ability to compute upper bounds for extended nonlocal games is obtained fro
   \vfill
   \centering
   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title} Parallel Repetition of Monogamy-of-entanglement Games
+    \usebeamerfont{title} Parallel repetition of monogamy-of-entanglement games
   \end{beamercolorbox}
   \vfill
   \end{frame}
@@ -607,11 +607,11 @@ This ability to compute upper bounds for extended nonlocal games is obtained fro
 	\begin{theorem}[Tomamichel, Fehr, Kaniewski, Wehner]
 		Let $G = (\pi,R)$ be a monogamy game where $\pi$ is uniform over $\Sigma$. It holds that 
 		\begin{align*}
-			\omega^*(G^n) \leq \left( \frac{1}{\abs{\Sigma}} + \frac{\abs{\Sigma} - 1}{\abs{\Sigma}} \sqrt{c(G)} \right)^n. 
+			\omega^*(G^n) \leq \left( \frac{1}{\abs{\Sigma}} + \frac{\abs{\Sigma} - 1}{\abs{\Sigma}} \sqrt{c(G)} \right)^n,
 		\end{align*}
 where $c(G)$ is the ``maximal overlap of measurements'' of the referee
 	\begin{align*}
-		c(G) = \max_{ \substack{ x,y \in \Sigma \\ x \not= y } } \max_{a,b \in \Gamma} \biggnorm{ \sqrt{R(a|x)} \sqrt{R(b|y)} }^2
+		c(G) = \max_{ \substack{ x,y \in \Sigma \\ x \not= y } } \max_{a,b \in \Gamma} \biggnorm{ \sqrt{R(a|x)} \sqrt{R(b|y)} }^2.
 	\end{align*}
 	\end{theorem}		
 \end{frame}   
@@ -629,19 +629,19 @@ where $c(G)$ is the ``maximal overlap of measurements'' of the referee
 
 \begin{frame}
 	\frametitle{A key proposition and lemma}
-	\begin{prop}
-		Let $G = (\pi,R)$ be a monogamy-of-entanglement game for which $\Sigma = \{0,1\}$, $\pi$ is uniform over $\Sigma$, and $R(a|x)$ is a projection operator for each $x \in \Sigma$ and $a \in \Gamma$. It holds that 
-		\begin{align*}
-			\omega(G) = \frac{1}{2} + \frac{1}{2} \max_{a,b \in \Gamma} \biggnorm{R(a|0)R(b|1)}.
-		\end{align*}
-	\end{prop}
-	\vspace{2mm}
 	\begin{lemma}
 		Let $\Pi_0$ and $\Pi_1$ be nonzero projection operators on $\complex^n$. It holds that 
 		\begin{align*}
 			\norm{\Pi_0 + \Pi_1} = 1 + \norm{\Pi_0 \Pi_1}.
 		\end{align*}
 	\end{lemma}
+	\vspace{2mm}
+	\begin{prop}
+		Let $G = (\pi,R)$ be a monogamy-of-entanglement game for which $\Sigma = \{0,1\}$, $\pi$ is uniform over $\Sigma$, and $R(a|x)$ is a projection operator for each $x \in \Sigma$ and $a \in \Gamma$. It holds that 
+		\begin{align*}
+			\omega(G) = \frac{1}{2} + \frac{1}{2} \max_{a,b \in \Gamma} \biggnorm{R(a|0)R(b|1)}.
+		\end{align*}
+	\end{prop}
 \end{frame}
 
 \begin{frame} 
@@ -684,16 +684,11 @@ where $c(G)$ is the ``maximal overlap of measurements'' of the referee
 	}
 \end{frame}
 
-\begin{frame}[noframenumbering]
-  \vfill
-  \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title} Open questions
-  \end{beamercolorbox}
-  \vfill
-  \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section{Open questions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[noframenumbering]
+\begin{frame}
 	\frametitle{Unentangled vs.~standard quantum strategies for monogamy-of-entanglement games}	
 	\begin{table}
 	\centering
