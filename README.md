@@ -3,6 +3,17 @@
 
 Supplemental MATLAB scripts for the theory seminar talk on monogamy-of-entanglement games.
 
+## Talk Abstract
+
+Two-player one-round games have served to be an instrumental model in theoretical computer science. 
+Likewise, nonlocal games consider this model when the players have access to an entangled quantum state. 
+In this talk, I will consider a broader class of nonlocal games (extended-nonlocal games), where the 
+referee shares an entangled state along with the players. We will pay particular attention to a type of 
+extended nonlocal game called monogamy-of-entanglement games. Throughout the talk, there will be code 
+examples to help us understand these games. The code will make use of MATLAB, and a particularly nice 
+package called QETLAB, which is a library primarily written by Nathaniel Johnston (http://www.nathanieljohnston.com/) 
+for studying quantum information. 
+
 ## Dependencies
 
 1. [MATLAB](http://www.mathworks.com/products/matlab/) (free if UW student check IST Software Portal),

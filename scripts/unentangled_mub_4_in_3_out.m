@@ -24,9 +24,7 @@ for i = 1:num_outputs
                 R_win_sum = R{1}{i} + R{2}{j} + R{3}{k} + R{4}{l};
                 
                 cvx_begin sdp quiet
-                %cvx_precision best;
-                %#ok<*VUNUS>    % suppress MATLAB warnings for equality checks in CVX
-                %#ok<*EQEFF>    % suppress MATLAB warnings for inequality checks in CVX
+				
                 variable rho(3,3) hermitian
                 
                 maximize trace(R_win_sum'*rho)
