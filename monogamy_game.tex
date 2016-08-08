@@ -260,7 +260,7 @@ For a nonlocal game, $G$, we denote the classical and quantum values as
 	Monogamy-of-entanglement games\footnote{[Tomamichel, Fehr, Kaniewski, Wehner, (2013)]}, are a special type of extended nonlocal game. 
 \begin{figure}[!htpb] \label{fig:monogamy-of-entanglement game}
 	\begin{center}
-		\includegraphics[scale=0.7]{figures/moe_2.pdf}
+		\includegraphics[scale=0.6]{figures/moe_2.pdf}
 	\end{center}
 \end{figure}
 	\begin{enumerate}
@@ -312,23 +312,29 @@ where $\rho$ is separable.
 	The \emph{unentangled value}, denoted as $\omega(G)$, is the supremum of the winning probability over all unentangled strategies.	
 \end{frame}
 
-\begin{frame}
-	\frametitle{Unentangled value of monogamy-of-entanglement games}
-	For an unentangled strategy, we have that Alice, Bob, and the referee share
-	\begin{align*}
-		\rho = \sum_{j \in \Delta} p(j) \rho_j^{\reg{R}} \otimes \rho_j^{\reg{A}} \otimes \rho_j^{\reg{B}}.
-	\end{align*}
-	\begin{itemize}
-		\item For $\omega(G)$, we want the \emph{best} Alice and Bob can do. 
-		\item Since $\rho$ is separable (no quantum correlations) pick \emph{best} $j$:
-	\end{itemize}
-	\begin{align*}
-		\rho = \rho^{\reg{R}} \otimes \rho^{\reg{A}} \otimes \rho^{\reg{B}}.
-	\end{align*}
-\end{frame}
+%\begin{frame}
+%	\frametitle{Unentangled value of monogamy-of-entanglement games}
+%	For an unentangled strategy, we have that Alice, Bob, and the referee share
+%	\begin{align*}
+%		\rho = \sum_{j \in \Delta} p(j) \rho_j^{\reg{R}} \otimes \rho_j^{\reg{A}} \otimes \rho_j^{\reg{B}}.
+%	\end{align*}
+%	\begin{itemize}
+%		\item For $\omega(G)$, we want the \emph{best} Alice and Bob can do. 
+%		\item Since $\rho$ is separable (no quantum correlations) pick \emph{best} $j$:
+%	\end{itemize}
+%	\begin{align*}
+%		\rho = \rho^{\reg{R}} \otimes \rho^{\reg{A}} \otimes \rho^{\reg{B}}.
+%	\end{align*}
+%\end{frame}
 
 \begin{frame}
-	\frametitle{Unentangled strategies for monogamy-of-entanglement games}
+	\frametitle{Unentangled value for monogamy-of-entanglement games}
+		\begin{itemize}
+		\item For $\omega(G)$, we want the \emph{best} Alice and Bob can do. 
+		\item Since $\rho$ is separable (no quantum correlations) we can imagine Alice and Bob optimizing functions $f : \Sigma \rightarrow \Gamma$ locally. 
+	\end{itemize}
+	\pause
+	\vspace{2mm}
 Alice and Bob only win when their outputs agree, and we assume that the measurements of the referee are positive semidefinite (from the definition for monogamy-of-entanglement games). 	
 	\begin{itemize}
 	\item For any monogamy-of-entanglement game, $G$, the unentangled value is:
