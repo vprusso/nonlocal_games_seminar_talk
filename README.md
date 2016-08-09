@@ -29,12 +29,29 @@ Once you add the folder to your working directory, you are ready to run the exam
 This set of scripts makes heavy use of the QETLAB package to study nonlocal games, and more specifically, 
 the class of monogamy-of-entanglement games as is the focus of this talk / software. 
 
+## Misc. Links:
+
+1. [Information Systems & Technology website](https://uwaterloo.ca/information-systems-technology/services/software-faculty-and-staff/licensed-software-university-waterloo):
+Consult this site to find out how you can obtain a university MATLAB license if you don't already have it. 
+2. [Nathaniel Johnston QETLAB blog post](http://www.njohnston.ca/2015/04/introducing-qetlab-a-matlab-toolbox-for-quantum-entanglement/) A quick start guide to QETLAB
+written by Nathaniel Johnston on his blog. 
+3. [How to cite QETLAB](http://www.qetlab.com/How_to_cite)
+
 ### References:
 
-[1] "A monogamy of entanglement game with applications to device independent
-      quantum cryptography" - M. Tomamichel, S. Fehr, J. Kaniewski, S. Wehner.
-	  (arxiv:1210.4359)
+[1] "A monogamy of entanglement game with applications to device independent quantum cryptography",
+     
+	  M. Tomamichel, S. Fehr, J. Kaniewski, S. Wehner.,
+	  
+	  New Journal of Physics, IOP Publishing, 2013, 15, 103002,
+	  
+	  ArXiv: [arxiv:1210.4359](http://arxiv.org/abs/1210.4359)
 
-[2] "Extended nonlocal games and monogamy-of-entanglement games" - N. Johnston,
-     R. Mittal, V. Russo, J. Watrous. (arxiv:1510.02083)
+[2] "Extended nonlocal games and monogamy-of-entanglement games", 
+
+	N. Johnston, R. Mittal, V. Russo, J. Watrous,
+	
+	Proc. R. Soc. A, 2016, 472, 20160003, 2016,
+
+	ArXiv: [arxiv:1510.02083](https://arxiv.org/abs/1510.02083)
 	 	 
